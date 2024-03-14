@@ -20,12 +20,7 @@ jobs:
 
       - name: Add submodules
         run: |
-          git fetch
-          git pull
-          git submodule init
-          git submodule add https://github.com/PoomSmart/FLEXing.git Tweaks/FLEXing
-          git submodule add https://github.com/dayanch96/uYouLocalization.git Tweaks/uYouLocalization
-          git submodule add https://github.com/arichorn/YTHoldForSpeed.git Tweaks/YTHoldForSpeed
+          git submodule add https://github.com/PoomSmart/YTABConfig.git Tweaks/YTABConfig
           git add .
           git commit -m "added submodules"
           git push origin
@@ -66,8 +61,7 @@ jobs:
       - name: Make .bundle files
         run: |
           cd Bundles
-          ln -s ../Tweaks/uYouLocalization/layout/Library/Application\ Support/uYouLocalization.bundle uYouLocalization.bundle
-          ln -s ../Tweaks/YTHoldForSpeed/layout/Library/Application\ Support/YTHoldForSpeed.bundle YTHoldForSpeed.bundle
+          ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle YTABConfig.bundle
           git add .
           git commit -m "Added bundles"
           git push origin
