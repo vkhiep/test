@@ -1,6 +1,6 @@
 // Template for whenever I refresh the main branch. and even need to re-add the submodules afterwards.
 
-name: addsub
+name: Update submodules!
 
 on:
   workflow_dispatch:
