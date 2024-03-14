@@ -7,3 +7,6 @@
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
 	url = https://github.com/arichorn/YTHoldForSpeed.git
+[submodule "Tweaks/YTABConfig"]
+	path = Tweaks/YTABConfig
+	url = https://github.com/PoomSmart/YTABConfig.git
