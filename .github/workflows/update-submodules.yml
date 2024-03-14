@@ -20,6 +20,8 @@ jobs:
 
       - name: Add submodules
         run: |
+          git fetch
+          git pull
           git submodule init
           git submodule add https://github.com/PoomSmart/FLEXing.git Tweaks/FLEXing
           git submodule add https://github.com/dayanch96/uYouLocalization.git Tweaks/uYouLocalization
