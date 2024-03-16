@@ -86,9 +86,9 @@ jobs:
 #          git push origin
 #        continue-on-error: true
 
-       - name: Make .bundle files
-         if: ${{ inputs.add_bundle_check }}
-         run: |
+      - name: Make .bundle files
+        if: ${{ inputs.add_bundle_check }}
+        run: |
            ${{ inputs.add_bundle }}
            git add .
            git commit -m "Added bundles"
