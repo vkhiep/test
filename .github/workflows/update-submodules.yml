@@ -5,16 +5,16 @@ name: Update submodules!
 on:
   workflow_dispatch:
     inputs:
-      repo_github:
+      add_sub:
         description: "Repository github: example: user/repository"
         default: "hiepvk/src"
-        required: true
+        required: false
         type: string
-      ref_github:
-        description: "Ref repository github: example: main, master, v.v"
-        default: "main"
-        required: true
-        type: string
+      add_sub_check:
+        description: "Add Sub Check"
+        default: false
+        required: false
+        type: boolean
       sub_repo:
         description: "Sub repository github: example: user/repository"
         default: "PoomSmart/YouTubeHeader"
@@ -50,6 +50,7 @@ jobs:
            git config --global user.name "GitHub Actions"
 
       - name: Add submodules
+        if: ${{ inputs.add_sub_check }}
         run: |
           git submodule add https://github.com/PoomSmart/YTABConfig.git Tweaks/YTABConfig
           git add .
