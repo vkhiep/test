@@ -17,7 +17,7 @@ on:
         type: boolean
       add_bundle:
         description: "Add bundle"
-        default: "cd Bundles && ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle YTABConfig.bundle"
+        default: "ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle YTABConfig.bundle"
         required: false
         type: string
       add_bundle_check:
@@ -89,10 +89,11 @@ jobs:
       - name: Make .bundle files
         if: ${{ inputs.add_bundle_check }}
         run: |
-           ${{ inputs.add_bundle }}
-           git add .
-           git commit -m "Added bundles"
-           git push origin
+          cd Bundles
+          ${{ inputs.add_bundle }}
+          git add .
+          git commit -m "Added bundles"
+          git push origin
 
       - name: Check exit code
         run: |
