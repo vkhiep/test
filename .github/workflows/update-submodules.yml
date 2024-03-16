@@ -15,6 +15,16 @@ on:
         default: false
         required: false
         type: boolean
+      add_bundle:
+        description: "Add bundle"
+        default: "ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle Bundles/YTABConfig.bundle"
+        required: false
+        type: string
+      add_bundle_check:
+        description: "Add bundle check"
+        default: false
+        required: false
+        type: boolean
       up_sub_check:
         description: "Update submodule check"
         default: false
@@ -76,13 +86,13 @@ jobs:
 #          git push origin
 #        continue-on-error: true
 
-#      - name: Make .bundle files
-#        run: |
-#          cd Bundles
-#          ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle YTABConfig.bundle
-#          git add .
-#          git commit -m "Added bundles"
-#          git push origin
+       - name: Make .bundle files
+        if: ${{ inputs.add_bundle_check }}
+         run: |
+           ${{ inputs.add_bundle }}
+           git add .
+           git commit -m "Added bundles"
+           git push origin
 
       - name: Check exit code
         run: |
