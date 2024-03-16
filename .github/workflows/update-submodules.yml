@@ -4,6 +4,37 @@ name: Update submodules!
 
 on:
   workflow_dispatch:
+    inputs:
+      repo_github:
+        description: "Repository github: example: user/repository"
+        default: "hiepvk/src"
+        required: true
+        type: string
+      ref_github:
+        description: "Ref repository github: example: main, master, v.v"
+        default: "main"
+        required: true
+        type: string
+      sub_repo:
+        description: "Sub repository github: example: user/repository"
+        default: "PoomSmart/YouTubeHeader"
+        required: false
+        type: string
+      sub_ref:
+        description: "Sub ref repository github: example: main, master, v.v"
+        default: "main"
+        required: false
+        type: string
+      sub_path:
+        description: "Sub path repository github: example: abc, xyz"
+        default: "YouTubeHeader"
+        required: false
+        type: string
+      sub_check:
+        description: "Sub Check"
+        default: false
+        required: false
+        type: boolean
 
 jobs:
   update-submodules:
