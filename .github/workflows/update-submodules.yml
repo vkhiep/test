@@ -7,7 +7,7 @@ on:
     inputs:
       add_sub:
         description: "Add submodule"
-        default: ""
+        default: "git submodule add -b main https://github.com/PoomSmart/YTABConfig.git Tweaks/YTABConfig"
         required: false
         type: string
       add_sub_check:
