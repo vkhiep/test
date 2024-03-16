@@ -17,7 +17,7 @@ on:
         type: boolean
       add_bundle:
         description: "Add bundle"
-        default: "ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle Bundles/YTABConfig.bundle"
+        default: "cd Bundles && ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/YTABConfig.bundle YTABConfig.bundle"
         required: false
         type: string
       add_bundle_check:
