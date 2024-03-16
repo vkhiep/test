@@ -6,32 +6,12 @@ on:
   workflow_dispatch:
     inputs:
       add_sub:
-        description: "Repository github: example: user/repository"
-        default: "hiepvk/src"
+        description: "Add submodule"
+        default: ""
         required: false
         type: string
       add_sub_check:
         description: "Add Sub Check"
-        default: false
-        required: false
-        type: boolean
-      sub_repo:
-        description: "Sub repository github: example: user/repository"
-        default: "PoomSmart/YouTubeHeader"
-        required: false
-        type: string
-      sub_ref:
-        description: "Sub ref repository github: example: main, master, v.v"
-        default: "main"
-        required: false
-        type: string
-      sub_path:
-        description: "Sub path repository github: example: abc, xyz"
-        default: "YouTubeHeader"
-        required: false
-        type: string
-      sub_check:
-        description: "Sub Check"
         default: false
         required: false
         type: boolean
