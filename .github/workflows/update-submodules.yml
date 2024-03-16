@@ -15,6 +15,16 @@ on:
         default: false
         required: false
         type: boolean
+      up2_sub:
+        description: "Update2 submodule"
+        default: "git submodule update --init --recursive --remote Tweaks/YTABConfig"
+        required: false
+        type: string
+      up2_sub_check:
+        description: "Update2 sub check"
+        default: false
+        required: false
+        type: boolean
       add_bundle:
         description: "Add bundle"
         default: "ln -s '../Tweaks/YTABConfig/layout/Library/Application Support/YTABConfig.bundle' 'YTABConfig.bundle'"
@@ -55,7 +65,7 @@ jobs:
           git push origin
 
       - name: Update submodules
-        if: ${{ inputs.add_sub_check }}
+        if: ${{ inputs.up_sub_check }}
         run: |
           git submodule update --init --recursive --remote
           git add .
@@ -63,30 +73,14 @@ jobs:
           git push origin
         continue-on-error: true
 
-#      - name: Update submodules
-#        run: |
-#         git submodule update --init --recursive --remote Tweaks/Alderis
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/DontEatMyContent
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/YTHoldForSpeed
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/MrBeastify
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/PSHeader
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/Return-YouTube-Dislikes
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/uYouLocalization
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/YTABConfig
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/YTUHD
-#          git add .
-#          git submodule update --init --recursive --remote Tweaks/YTVideoOverlay
-#          git commit -m "updated submodules"
-#          git push origin
-#        continue-on-error: true
+      - name: Update submodules
+        if: ${{ inputs.up2_sub_check }}
+        run: |
+          ${{ inputs.up2_sub }}
+          git add .
+          git commit -m "updated submodules"
+          git push origin
+        continue-on-error: true
 
       - name: Make .bundle files
         if: ${{ inputs.add_bundle_check }}
