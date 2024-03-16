@@ -87,7 +87,7 @@ jobs:
 #        continue-on-error: true
 
        - name: Make .bundle files
-        if: ${{ inputs.add_bundle_check }}
+         if: ${{ inputs.add_bundle_check }}
          run: |
            ${{ inputs.add_bundle }}
            git add .
