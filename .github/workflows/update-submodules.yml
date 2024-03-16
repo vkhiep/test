@@ -11,7 +11,12 @@ on:
         required: false
         type: string
       add_sub_check:
-        description: "Add Sub Check"
+        description: "Add sub check"
+        default: false
+        required: false
+        type: boolean
+      up_sub_check:
+        description: "Update submodule check"
         default: false
         required: false
         type: boolean
@@ -37,13 +42,14 @@ jobs:
           git commit -m "added submodules"
           git push origin
 
-#     - name: Update submodules
-#       run: |
-#         git submodule update --init --recursive --remote
-#         git add .
-#         git commit -m "updated submodules"
-#         git push origin
-#       continue-on-error: true
+      - name: Update submodules
+        if: ${{ inputs.add_sub_check }}
+        run: |
+          git submodule update --init --recursive --remote
+          git add .
+          git commit -m "updated submodules"
+          git push origin
+        continue-on-error: true
 
 #      - name: Update submodules
 #        run: |
