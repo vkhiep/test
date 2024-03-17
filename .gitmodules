@@ -6,3 +6,7 @@
 	path = Tweaks/YouTubeHeader
 	url = https://github.com/PoomSmart/YouTubeHeader
 	branch = main
+[submodule "Tweaks/YouPiP"]
+	path = Tweaks/YouPiP
+	url = https://github.com/PoomSmart/YouPiP.git
+	branch = main
