@@ -40,6 +40,11 @@ on:
         default: "YTABConfig.bundle"
         required: false
         type: string
+      dir_bundle:
+        description: "Dir bundle, example: Bundles"
+        default: "Bundles"
+        required: false
+        type: string
       add_bundle_check:
         description: "Add bundle check"
         default: false
@@ -95,7 +100,7 @@ jobs:
       - name: Make .bundle files
         if: ${{ inputs.add_bundle_check }}
         run: |
-          cd ${{ inputs.add_dir_sub }}
+          cd ${{ inputs.dir_bundle }}
           ln -s ../${{ inputs.add_dir_sub }}/layout/Library/Application\ Support/${{ inputs.add_bundle }} ${{ inputs.add_bundle }}
           git add .
           git commit -m "Added bundles"
