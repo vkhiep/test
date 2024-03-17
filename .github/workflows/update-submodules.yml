@@ -26,7 +26,7 @@ on:
         required: false
         type: boolean
       up_sub:
-        description: "Update submodule, example: Dir Tweaks/YTABConfig, Non for All"
+        description: "Update submodule, example: Tweaks/YTABConfig, Non for All"
         default: ""
         required: false
         type: string
@@ -42,7 +42,7 @@ on:
         type: string
       dir_bundle:
         description: "Dir bundle, example: Bundles"
-        default: "Bundles"
+        default: ""
         required: false
         type: string
       add_bundle_check:
