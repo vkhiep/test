@@ -26,7 +26,7 @@ on:
         required: false
         type: boolean
       up2_sub:
-        description: "Update2 submodule"
+        description: "Update2 submodule, example: Tweaks/YTABConfig"
         default: "Tweaks/YTABConfig"
         required: false
         type: string
@@ -46,7 +46,7 @@ on:
         required: false
         type: boolean
       up_sub_check:
-        description: "Update submodule check"
+        description: "Update all submodule check"
         default: false
         required: false
         type: boolean
