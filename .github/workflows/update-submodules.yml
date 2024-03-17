@@ -69,7 +69,7 @@ jobs:
       - name: Add submodules
         if: ${{ inputs.add_sub_check }}
         run: |
-          git submodule add -b add_ref_sub ${{ inputs.add_sub }} ${{ inputs.add_dir_sub }}
+          git submodule add -b ${{ inputs.add_ref_sub }} ${{ inputs.add_sub }} ${{ inputs.add_dir_sub }}
           git add .
           git commit -m "added submodules"
           git push origin
