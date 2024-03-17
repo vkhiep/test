@@ -6,8 +6,18 @@ on:
   workflow_dispatch:
     inputs:
       add_sub:
-        description: "Add submodule"
-        default: "git submodule add -b main https://github.com/PoomSmart/YTABConfig.git Tweaks/YTABConfig"
+        description: "Add submodule, example: https://github.com/PoomSmart/YTABConfig.git"
+        default: "https://github.com/PoomSmart/YTABConfig.git"
+        required: false
+        type: string
+      add_dir_sub:
+        description: "Dir submodule, example: Tweaks/YTABConfig"
+        default: "Tweaks/YTABConfig"
+        required: false
+        type: string
+      add_ref_sub:
+        description: "Ref submodule, example: main, master"
+        default: "main"
         required: false
         type: string
       add_sub_check:
@@ -17,7 +27,7 @@ on:
         type: boolean
       up2_sub:
         description: "Update2 submodule"
-        default: "git submodule update --init --recursive --remote Tweaks/YTABConfig"
+        default: "Tweaks/YTABConfig"
         required: false
         type: string
       up2_sub_check:
@@ -59,7 +69,7 @@ jobs:
       - name: Add submodules
         if: ${{ inputs.add_sub_check }}
         run: |
-          ${{ inputs.add_sub }}
+          git submodule add -b add_ref_sub ${{ inputs.add_sub }} ${{ inputs.add_dir_sub }}
           git add .
           git commit -m "added submodules"
           git push origin
@@ -76,7 +86,7 @@ jobs:
       - name: Update submodules
         if: ${{ inputs.up2_sub_check }}
         run: |
-          ${{ inputs.up2_sub }}
+          git submodule update --init --recursive --remote ${{ inputs.up2_sub }}
           git add .
           git commit -m "updated submodules"
           git push origin
