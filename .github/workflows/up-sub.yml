@@ -22,7 +22,7 @@ on:
       owner_repo:
         description: "Owner: example: user"
         default: "vkhiep"
-        required: false
+        required: true
         type: string
 
 ###############
