@@ -8,6 +8,22 @@ on:
   schedule:
     - cron: "0 0 */7 * *"
   workflow_dispatch:
+      inputs:
+      repo_github:
+        description: "Repository github: example: user/repository"
+        default: "vkhiep/uYouPlus"
+        required: true
+        type: string
+      ref_github:
+        description: "Ref repository github: example: main, master, v.v"
+        default: "main"
+        required: true
+        type: string
+      owner_repo:
+        description: "Owner: example: user"
+        default: "vkhiep"
+        required: false
+        type: string
 
 ###############
 # Set the Job #
