@@ -25,13 +25,13 @@ on:
         default: false
         required: false
         type: boolean
-      up2_sub:
-        description: "Update2 submodule, example: Tweaks/YTABConfig"
+      up_sub:
+        description: "Update submodule, example: Tweaks/YTABConfig"
         default: ""
         required: false
         type: string
-      up2_sub_check:
-        description: "Update2 sub check"
+      up_sub_check:
+        description: "Update sub check"
         default: false
         required: false
         type: boolean
@@ -47,11 +47,6 @@ on:
         type: string
       add_bundle_check:
         description: "Add bundle check"
-        default: false
-        required: false
-        type: boolean
-      up_sub_check:
-        description: "Update all submodule check"
         default: false
         required: false
         type: boolean
@@ -82,16 +77,7 @@ jobs:
       - name: Update submodules
         if: ${{ inputs.up_sub_check }}
         run: |
-          git submodule update --init --recursive --remote
-          git add .
-          git commit -m "updated submodules"
-          git push origin
-        continue-on-error: true
-
-      - name: Update submodules
-        if: ${{ inputs.up2_sub_check }}
-        run: |
-          git submodule update --init --recursive --remote ${{ inputs.up2_sub }}
+          git submodule update --init --recursive --remote ${{ inputs.up_sub }}
           git add .
           git commit -m "updated submodules"
           git push origin
