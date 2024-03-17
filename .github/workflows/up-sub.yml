@@ -33,10 +33,10 @@ jobs:
     name: Update submodules
     runs-on: ubuntu-latest
     env:
-      PARENT_REPOSITORY: 'vkhiep/uYouPlus'
-      CHECKOUT_BRANCH: 'main'
-      PR_AGAINST_BRANCH: 'main'
-      OWNER: 'vkhiep'
+      PARENT_REPOSITORY: '${{ inputs.repo_github }}'
+      CHECKOUT_BRANCH: '${{ inputs.ref_github }}'
+      PR_AGAINST_BRANCH: '${{ inputs.ref_github }}'
+      OWNER: '${{ inputs.owner_github }}'
 
     steps:
       ##########################
