@@ -2,3 +2,7 @@
 	path = Tweaks/YTABConfig
 	url = https://github.com/PoomSmart/YTABConfig.git
 	branch = main
+[submodule "Tweaks/YouTubeHeader"]
+	path = Tweaks/YouTubeHeader
+	url = https://github.com/PoomSmart/YouTubeHeader
+	branch = main
