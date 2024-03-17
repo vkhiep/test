@@ -5,6 +5,16 @@ name: Update submodules!
 on:
   workflow_dispatch:
     inputs:
+      repo_github:
+        description: "Repository github: example: user/repository"
+        default: ""
+        required: true
+        type: string
+      ref_github:
+        description: "Ref repository github: example: main, master, v.v"
+        default: ""
+        required: true
+        type: string
       add_sub:
         description: "Add submodule, example: https://github.com/PoomSmart/YTABConfig.git"
         default: ""
@@ -64,6 +74,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4.1.1
         with:
+          repository: ${{ inputs.repo_github }}
+          ref: ${{ inputs.ref_github }}
           submodules: recursive
 
       - name: Set up Git
