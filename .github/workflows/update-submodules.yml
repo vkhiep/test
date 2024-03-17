@@ -95,8 +95,8 @@ jobs:
       - name: Make .bundle files
         if: ${{ inputs.add_bundle_check }}
         run: |
-          cd Bundles
-          ln -s ../Tweaks/YTABConfig/layout/Library/Application\ Support/${{ inputs.add_bundle }} ${{ inputs.add_bundle }}
+          cd ${{ inputs.add_dir_sub }}
+          ln -s ../${{ inputs.add_dir_sub }}/layout/Library/Application\ Support/${{ inputs.add_bundle }} ${{ inputs.add_bundle }}
           git add .
           git commit -m "Added bundles"
           git push origin
