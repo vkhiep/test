@@ -10,16 +10,16 @@ on:
   workflow_dispatch:
     inputs:
       repo_github:
-        description: "Repository github: example: user/repository"
+        description: "Repository: example: user/repository"
         default: "vkhiep/uYouPlus"
         required: true
         type: string
       ref_github:
-        description: "Ref repository github: example: main, master, v.v"
+        description: "Ref repository: example: main, master, v.v"
         default: "main"
         required: true
         type: string
-      owner_repo:
+      owner_github:
         description: "Owner: example: user"
         default: "vkhiep"
         required: true
