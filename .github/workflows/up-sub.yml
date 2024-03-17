@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: "0 0 */7 * *"
   workflow_dispatch:
-      inputs:
+    inputs:
       repo_github:
         description: "Repository github: example: user/repository"
         default: "vkhiep/uYouPlus"
