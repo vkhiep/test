@@ -1,0 +1,4 @@
+[submodule "Tweaks/YTABConfig"]
+	path = Tweaks/YTABConfig
+	url = https://github.com/PoomSmart/YTABConfig.git
+	branch = main
