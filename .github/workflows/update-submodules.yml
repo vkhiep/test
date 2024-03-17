@@ -7,17 +7,17 @@ on:
     inputs:
       add_sub:
         description: "Add submodule, example: https://github.com/PoomSmart/YTABConfig.git"
-        default: "https://github.com/PoomSmart/YTABConfig.git"
+        default: ""
         required: false
         type: string
       add_dir_sub:
         description: "Dir submodule, example: Tweaks/YTABConfig"
-        default: "Tweaks/YTABConfig"
+        default: ""
         required: false
         type: string
       add_ref_sub:
         description: "Ref submodule, example: main, master"
-        default: "main"
+        default: ""
         required: false
         type: string
       add_sub_check:
@@ -27,7 +27,7 @@ on:
         type: boolean
       up2_sub:
         description: "Update2 submodule, example: Tweaks/YTABConfig"
-        default: "Tweaks/YTABConfig"
+        default: ""
         required: false
         type: string
       up2_sub_check:
@@ -37,7 +37,7 @@ on:
         type: boolean
       add_bundle:
         description: "Add bundle, example: YTABConfig.bundle"
-        default: "YTABConfig.bundle"
+        default: ""
         required: false
         type: string
       dir_bundle:
